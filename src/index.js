@@ -36,137 +36,9 @@ function ath (options) {
 	return _instance;
 }
 
-// message in all supported languages
-ath.intl = {
-	cs_cs: {
-		ios: 'Pro přidáni této webové aplikace na úvodní obrazovku: stlačte %icon a pak <strong>Přidat na úvodní obrazovku</strong>.',
-		android: 'Pro přidáni této webové aplikace na úvodní obrazovku otevřete menu nastavení prohlížeče a stlačte <strong>Přidat na úvodní obrazovku</strong>. <small>K menu se dostanete stlačením hardwaroveho tlačítka, když ho vaše zařízení má, nebo stlačením pravé horní menu ikony <span class="ath-action-icon">icon</span>.</small>'
-	},
-
-	de_de: {
-		ios: 'Um diese Web-App zum Home-Bildschirm hinzuzufügen, tippen Sie auf %icon und dann <strong>Zum Home-Bildschirm</strong>.',
-		android: 'Um diese Web-App zum Home-Bildschirm hinzuzufügen, öffnen Sie das Menü und tippen dann auf <strong>Zum Startbildschirm hinzufügen</strong>. <small>Wenn Ihr Gerät eine Menütaste hat, lässt sich das Browsermenü über diese öffnen. Ansonsten tippen Sie auf %icon.</small>'
-	},
-
-	da_dk: {
-		ios: 'For at tilføje denne web app til hjemmeskærmen: Tryk %icon og derefter <strong>Føj til hjemmeskærm</strong>.',
-		android: 'For at tilføje denne web app til hjemmeskærmen, åbn browser egenskaber menuen og tryk på <strong>Føj til hjemmeskærm</strong>. <small>Denne menu kan tilgås ved at trykke på menu knappen, hvis din enhed har en, eller ved at trykke på det øverste højre menu ikon %icon.</small>'
-	},
-
-	el_gr: {
-		ios: 'Για να προσθέσετε την εφαρμογή στην αρχική οθόνη: πατήστε το %icon και μετά <strong>Πρόσθεσε στην αρχική οθόνη</strong>.',
-		android: 'Για να προσθέσετε την εφαρμογή στην αρχική οθόνη, ανοίξτε τις επιλογές του browser σας και πατήστε το <strong>Προσθήκη στην αρχική οθόνη</strong>. <small>Μπορείτε να έχετε πρόσβαση στο μενού, πατώντας το κουμπί του μενού του κινητού σας ή το πάνω δεξιά κουμπί του μενού %icon.</small>'
-	},
-
-	en_us: {
-		ios: 'To add this web app to the home screen: tap %icon and then <strong>Add to Home Screen</strong>.',
-		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
-	},
-
-	es_es: {
-		ios: 'Para añadir esta aplicación web a la pantalla de inicio: pulsa %icon y selecciona <strong>Añadir a pantalla de inicio</strong>.',
-		android: 'Para añadir esta aplicación web a la pantalla de inicio, abre las opciones y pulsa <strong>Añadir a pantalla inicio</strong>. <small>El menú se puede acceder pulsando el botón táctil en caso de tenerlo, o bien el icono de la parte superior derecha de la pantalla %icon.</small>'
-	},
-
-	fi_fi: {
-		ios: 'Liitä tämä sovellus kotivalikkoon: klikkaa %icon ja tämän jälkeen <strong>Lisää kotivalikkoon</strong>.',
-		android: 'Lisätäksesi tämän sovelluksen aloitusnäytölle, avaa selaimen valikko ja klikkaa tähti -ikonia tai <strong>Lisää aloitusnäytölle tekstiä</strong>. <small>Valikkoon pääsee myös painamalla menuvalikkoa, jos laitteessasi on sellainen tai koskettamalla oikealla yläkulmassa menu ikonia %icon.</small>'
-	},
-
-	fr_fr: {
-		ios: 'Pour ajouter cette application web sur l\'écran d\'accueil : Appuyez %icon et sélectionnez <strong>Ajouter sur l\'écran d\'accueil</strong>.',
-		android: 'Pour ajouter cette application web sur l\'écran d\'accueil : Appuyez sur le bouton "menu", puis sur <strong>Ajouter sur l\'écran d\'accueil</strong>. <small>Le menu peut-être accessible en appuyant sur le bouton "menu" du téléphone s\'il en possède un <i class="fa fa-bars"></i>. Sinon, il se trouve probablement dans la coin supérieur droit du navigateur %icon.</small>'
-	},
-
-	he_il: {
-		ios: '<span dir="rtl">להוספת האפליקציה למסך הבית: ללחוץ על %icon ואז <strong>הוסף למסך הבית</strong>.</span>',
-		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
-	},
-
-	hu_hu: {
-		ios: 'Ha hozzá szeretné adni ezt az alkalmazást a kezdőképernyőjéhez, érintse meg a következő ikont: %icon , majd a <strong>Hozzáadás a kezdőképernyőhöz</strong> menüpontot.',
-		android: 'Ha hozzá szeretné adni ezt az alkalmazást a kezdőképernyőjéhez, a böngésző menüjében kattintson a <strong>Hozzáadás a kezdőképernyőhöz</strong> menüpontra. <small>A böngésző menüjét a következő ikon megérintésével tudja megnyitni: %icon.</small>'
-	},
-
-	it_it: {
-		ios: 'Per aggiungere questa web app alla schermata iniziale: premi %icon e poi <strong>Aggiungi a Home</strong>.',
-		android: 'Per aggiungere questa web app alla schermata iniziale, apri il menu opzioni del browser e premi su <strong>Aggiungi alla homescreen</strong>. <small>Puoi accedere al menu premendo il pulsante hardware delle opzioni se la tua device ne ha uno, oppure premendo l\'icona %icon in alto a destra.</small>'
-	},
-
-	ja_jp: {
-		ios: 'このウェプアプリをホーム画面に追加するには、%iconをタップして<strong>ホーム画面に追加</strong>してください。',
-		android: 'このウェプアプリをホーム画面に追加するには、ブラウザのオプションメニューから<strong>ホーム画面に追加</strong>をタップしてください。<small>オプションメニューは、一部の機種ではデバイスのメニューボタンから、それ以外では画面右上の%iconからアクセスできます。</small>'
- 	},
-
-	ko_kr: {
-		ios: '홈 화면에 바로가기 생성: %icon 을 클릭한 후 <strong>홈 화면에 추가</strong>.',
-		android: '브라우저 옵션 메뉴의 <string>홈 화면에 추가</string>를 클릭하여 홈화면에 바로가기를 생성할 수 있습니다. <small>옵션 메뉴는 장치의 메뉴 버튼을 누르거나 오른쪽 상단의 메뉴 아이콘 %icon을 클릭하여 접근할 수 있습니다.</small>'
-	},
-
-	nb_no: {
-		ios: 'For å installere denne appen på hjem-skjermen: trykk på %icon og deretter <strong>Legg til på Hjem-skjerm</strong>.',
-		android: 'For å legge til denne webappen på startsiden åpner en nettlesermenyen og velger <strong>Legg til på startsiden</strong>. <small>Menyen åpnes ved å trykke på den fysiske menyknappen hvis enheten har det, eller ved å trykke på menyikonet øverst til høyre %icon.</small>'
-	},
-
-	pt_br: {
-		ios: 'Para adicionar este app à tela de início: clique %icon e então <strong>Tela de início</strong>.',
-		android: 'Para adicionar este app à tela de início, abra o menu de opções do navegador e selecione <strong>Adicionar à tela inicial</strong>. <small>O menu pode ser acessado pressionando o "menu" button se o seu dispositivo tiver um, ou selecionando o ícone %icon no canto superior direito.</small>'
-	},
-
-	pt_pt: {
-		ios: 'Para adicionar esta app ao ecrã principal: clique %icon e depois <strong>Ecrã principal</strong>.',
-		android: 'Para adicionar esta app web ecrã principal, abra o menu de opções do navegador e selecione <strong>Adicionar à tela inicial</strong>. <small>O menu pode ser acessado pressionando o "menu" button se o seu dispositivo tiver um, ou selecionando o ícone %icon no canto superior direito.</small>'
-	},
-
-	nl_nl: {
-		ios: 'Om deze webapp aan je startscherm toe te voegen, klik op %icon en dan <strong>Zet in startscherm</strong>.',
-		android: 'Om deze webapp aan je startscherm toe te voegen, open de browserinstellingen en tik op <strong>Toevoegen aan startscherm</strong>. <small>Gebruik de "menu" knop als je telefoon die heeft, anders het menu-icoon rechtsbovenin %icon.</small>'
-	},
-
-	ru_ru: {
-		ios: 'Чтобы добавить этот сайт на свой домашний экран, нажмите на иконку %icon и затем <strong>На экран "Домой"</strong>.',
-		android: 'Чтобы добавить сайт на свой домашний экран, откройте меню браузера и нажмите на <strong>Добавить на главный экран</strong>. <small>Меню можно вызвать, нажав на кнопку меню вашего телефона, если она есть. Или найдите иконку сверху справа %icon[иконка].</small>'
-	},
-
-	sk_sk: {
-		ios: 'Pre pridanie tejto webovej aplikácie na úvodnú obrazovku: stlačte %icon a potom <strong>Pridať na úvodnú obrazovku</strong>.',
-		android: 'Pre pridanie tejto webovej aplikácie na úvodnú obrazovku otvorte menu nastavenia prehliadača a stlačte <strong>Pridať na úvodnú obrazovku</strong>. <small>K menu sa dostanete stlačením hardwaroveho tlačidla, ak ho vaše zariadenie má, alebo stlačením pravej hornej menu ikony <span class="ath-action-icon">icon</span>.</small>'
-	},
-
-	sv_se: {
-		ios: 'För att lägga till denna webbapplikation på hemskärmen: tryck på %icon och därefter <strong>Lägg till på hemskärmen</strong>.',
-		android: 'För att lägga till den här webbappen på hemskärmen öppnar du webbläsarens alternativ-meny och väljer <strong>Lägg till på startskärmen</strong>. <small>Man hittar menyn genom att trycka på hårdvaruknappen om din enhet har en sådan, eller genom att trycka på menyikonen högst upp till höger %icon.</small>'
-	},
-
-	tr_tr: {
-		ios: 'Uygulamayı ana ekrana eklemek için, %icon ve ardından <strong>ana ekrana ekle</strong> butonunu tıklayın.',
-		android: 'Uygulamayı ana ekrana eklemek için, menüye girin ve <strong>ana ekrana ekle</strong> butonunu tıklayın. <small>Cihazınız menü tuşuna sahip ise menüye girmek için menü tuşunu tıklayın. Aksi takdirde %icon butonunu tıklayın.</small>'
-	},
-
-	uk_ua: {
-		ios: 'Щоб додати цей сайт на початковий екран, натисніть %icon, а потім <strong>На початковий екран</strong>.',
-		android: 'Щоб додати цей сайт на домашній екран, відкрийте меню браузера та виберіть <strong>Додати на головний екран</strong>. <small>Це можливо зробити, натиснувши кнопку меню на вашому смартфоні, якщо така є. Або ж на іконці зверху справа %icon.</small>'
-	},
-
-	zh_cn: {
-		ios: '如要把应用程序加至主屏幕,请点击%icon, 然后<strong>添加到主屏幕</strong>',
-		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
-	},
-
-	zh_tw: {
-		ios: '如要把應用程式加至主屏幕, 請點擊%icon, 然後<strong>加至主屏幕</strong>.',
-		android: 'To add this web app to the home screen open the browser option menu and tap on <strong>Add to homescreen</strong>. <small>The menu can be accessed by pressing the menu hardware button if your device has one, or by tapping the top right menu icon %icon.</small>'
-	}
-};
-
-// Add 2 characters language support (Android mostly)
-for ( var lang in ath.intl ) {
-	ath.intl[lang.substr(0, 2)] = ath.intl[lang];
-}
-
 // default options
 ath.defaults = {
-	appID: 'org.cubiq.addtohome',		// local storage name (no need to change)
+	appID: 'add_to_homescreen',		// local storage name (no need to change)
 	fontSize: 15,				// base font size, used to properly resize the popup based on viewport scale factor
 	debug: false,				// override browser checks
 	logging: false,				// log reasons for showing or not showing to js console; defaults to true when debug is true
@@ -187,24 +59,19 @@ ath.defaults = {
 	onAdd: null,				// when the application is launched the first time from the homescreen (guesstimate)
 	onPrivate: null,			// executed if user is in private mode
 	privateModeOverride: false,	// show the message even in private mode (very rude)
-	detectHomescreen: false		// try to detect if the site has been added to the homescreen (false | true | 'hash' | 'queryString' | 'smartURL')
+	detectHomescreen: false,		// try to detect if the site has been added to the homescreen (false | true | 'hash' | 'queryString' | 'smartURL')
+	iosText: 'pica',
+	androidText: 'devka'
 };
 
 // browser info and capability
 var _ua = window.navigator.userAgent;
 
-var _nav = window.navigator;
 _extend(ath, {
 	hasToken: document.location.hash == '#ath' || _reSmartURL.test(document.location.href) || _reQueryString.test(document.location.search),
-	isRetina: window.devicePixelRatio && window.devicePixelRatio > 1,
 	isIDevice: (/iphone|ipod|ipad/i).test(_ua),
 	isMobileChrome: _ua.indexOf('Android') > -1 && (/Chrome\/[.0-9]*/).test(_ua) && _ua.indexOf("Version") == -1,
-	isMobileIE: _ua.indexOf('Windows Phone') > -1,
-	language: _nav.language && _nav.language.toLowerCase().replace('-', '_') || ''
 });
-
-// falls back to en_us if language is unsupported
-ath.language = ath.language && ath.language in ath.intl ? ath.language : 'en_us';
 
 ath.isMobileSafari = ath.isIDevice && _ua.indexOf('Safari') > -1 && _ua.indexOf('CriOS') < 0;
 ath.OS = ath.isIDevice ? 'ios' : ath.isMobileChrome ? 'android' : ath.isMobileIE ? 'windows' : 'unsupported';
@@ -215,7 +82,7 @@ ath.OSVersion = ath.OSVersion && ath.OSVersion[2] ? +ath.OSVersion[2].replace('_
 ath.isStandalone = 'standalone' in window.navigator && window.navigator.standalone;
 ath.isTablet = (ath.isMobileSafari && _ua.indexOf('iPad') > -1) || (ath.isMobileChrome && _ua.indexOf('Mobile') < 0);
 
-ath.isCompatible = (ath.isMobileSafari && ath.OSVersion >= 6) || ath.isMobileChrome;	// TODO: add winphone
+ath.isCompatible = (ath.isMobileSafari && ath.OSVersion >= 6) || ath.isMobileChrome;
 
 var _defaultSession = {
 	lastDisplayTime: 0,			// last time we displayed the message
@@ -290,7 +157,7 @@ ath.Class = function (options) {
 
 	// the device is not supported
 	if ( !ath.isCompatible ) {
- 		this.doLog("Add to homescreen: not displaying callout because device not supported");
+ 		this.doLog("Device not supported");
 		return;
 	}
 
@@ -322,22 +189,17 @@ ath.Class = function (options) {
 		}
 	}
 
-	// check compatibility with old versions of add to homescreen. Opt-out if an old session is found
-	if ( this.getItem('addToHome') ) {
-		this.optOut();
-	}
-
 	// critical errors:
 	if ( this.session.optedout ) {
-		this.doLog("Add to homescreen: not displaying callout because user opted out");
+		this.doLog("User opt out");
 		return;
 	}
 	if ( this.session.added ) {
-		this.doLog("Add to homescreen: not displaying callout because already added to the homescreen");
+		this.doLog("Already added");
 		return;
 	}
 	if ( !isValidLocation ) {
-		this.doLog("Add to homescreen: not displaying callout because not a valid location");
+		this.doLog("Invalid location");
 		return;
 	}
 
@@ -353,7 +215,7 @@ ath.Class = function (options) {
 			}
 		}
 
-		this.doLog("Add to homescreen: not displaying callout because in standalone mode");
+		this.doLog("Standalone mode");
 		return;
 	}
 
@@ -373,7 +235,7 @@ ath.Class = function (options) {
 				}
 			}
 
-			this.doLog("Add to homescreen: not displaying callout because URL has token, so we are likely coming from homescreen");
+			this.doLog("PWA");
 			return;
 		}
 
@@ -394,14 +256,14 @@ ath.Class = function (options) {
 
 		// we do not show the message if this is your first visit
 		if ( this.options.skipFirstVisit ) {
-			this.doLog("Add to homescreen: not displaying callout because skipping first visit");
+			this.doLog("First visit");
 			return;
 		}
 	}
 
 	// we do no show the message in private mode
 	if ( !this.options.privateModeOverride && !ath.hasLocalStorage ) {
-		this.doLog("Add to homescreen: not displaying callout because browser is in private mode");
+		this.doLog("Private mode");
 		return;
 	}
 
@@ -413,7 +275,7 @@ ath.Class = function (options) {
 	}
 
 	if ( this.options.autostart ) {
-		this.doLog("Add to homescreen: autostart displaying callout");
+		this.doLog("Autostart");
 		this.show();
 	}
 };
@@ -451,7 +313,7 @@ ath.Class.prototype = {
 
 		// message already on screen
 		if ( this.shown ) {
-			this.doLog("Add to homescreen: not displaying callout because already shown on screen");
+			this.doLog("Already shown");
 			return;
 		}
 
@@ -461,19 +323,19 @@ ath.Class.prototype = {
 		if ( force !== true ) {
 			// this is needed if autostart is disabled and you programmatically call the show() method
 			if ( !this.ready ) {
-				this.doLog("Add to homescreen: not displaying callout because not ready");
+				this.doLog("Not ready");
 				return;
 			}
 
 			// we obey the display pace (prevent the message to popup too often)
 			if ( now - lastDisplayTime < this.options.displayPace * 60000 ) {
-				this.doLog("Add to homescreen: not displaying callout because displayed recently");
+				this.doLog("Displayed recently");
 				return;
 			}
 
 			// obey the maximum number of display count
 			if ( this.options.maxDisplayCount && this.session.displayCount >= this.options.maxDisplayCount ) {
-				this.doLog("Add to homescreen: not displaying callout because displayed too many times already");
+				this.doLog("Display limit reached");
 				return;
 			}
 		}
@@ -495,18 +357,12 @@ ath.Class.prototype = {
 		}
 
 		var message = '';
-
-		if ( typeof this.options.message == 'object' && ath.language in this.options.message ) {		// use custom language message
-			message = this.options.message[ath.language][ath.OS];
-		} else if ( typeof this.options.message == 'object' && ath.OS in this.options.message ) {		// use custom os message
-			message = this.options.message[ath.OS];
-		} else if ( this.options.message in ath.intl ) {				// you can force the locale
-			message = ath.intl[this.options.message][ath.OS];
-		} else if ( this.options.message !== '' ) {						// use a custom message
-			message = this.options.message;
-		} else if ( ath.OS in ath.intl[ath.language] ) {				// otherwise we use our message
-			message = ath.intl[ath.language][ath.OS];
+		if (ath.OS === 'android') {''
+			message = this.options.androidText;
+		} else if (ath.OS === 'ios') {
+			message = this.options.iosText;
 		}
+
 
 		// add the action icon
 		message = '<p>' + message.replace(/%icon(?:\[([^\]]+)\])?/gi, function(matches, group1) {
@@ -526,7 +382,7 @@ ath.Class.prototype = {
 
 		// create the actual message element
 		this.element = document.createElement('div');
-		this.element.className = 'ath-container ath-' + ath.OS + ' ath-' + ath.OS + (parseInt(ath.OSVersion) || '') + ' ath-' + (ath.isTablet ? 'tablet' : 'phone');
+		this.element.className = 'ath-container ath-' + ath.OS + ' ath-' + ath.OS + ' ath-' + (ath.isTablet ? 'tablet' : 'phone');
 		this.element.style.cssText = '-webkit-transition-property:-webkit-transform,opacity;-webkit-transition-duration:0s;-webkit-transition-timing-function:ease-out;transition-property:transform,opacity;transition-duration:0s;transition-timing-function:ease-out;';
 		this.element.style.webkitTransform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
 		this.element.style.transform = 'translate3d(0,-' + window.innerHeight + 'px,0)';
@@ -745,6 +601,6 @@ function _removeToken () {
 }
 
 // expose to the world
-window.addToHomescreen = ath;
+module.exports = {addToHomescreen: ath};
 
 })(window, document);
