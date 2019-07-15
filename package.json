@@ -8,7 +8,7 @@
     "url": "git+https://github.com/blueskydigital/add-to-homescreen.git"
   },
   "scripts": {
-    "build": "webpack --env.prod -p --config ./webpack.config.js"
+    "build": "webpack -p --config ./webpack.config.js"
   },
   "author": "",
   "license": "ISC",

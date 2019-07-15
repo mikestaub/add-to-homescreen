@@ -8,6 +8,7 @@ module.exports = {
         filename: 'index.min.js'
     },
     optimization: {
+        minimize: true,
         minimizer: [new UglifyJsPlugin()],
     },
 };
