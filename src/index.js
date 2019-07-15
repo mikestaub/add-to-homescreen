@@ -601,5 +601,5 @@ function _removeToken () {
 }
 
 // expose to the world
-module.exports = {addToHomescreen: ath}
+module.exports = ath;
 
