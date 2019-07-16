@@ -1,26 +1,46 @@
-**Repository is now archived**
-
 # Add to Homescreen call out
 
-Script for mobile devices, it automatically shows an overlaying message encouraging to add the web app to the homescreen. Compatible with iOS 6+ and Chrome for Android (soon WinPhone).
+Script for mobile devices, it automatically shows an overlaying message encouraging to add the web app to the homescreen. Compatible with iOS9 and Chrome for Android.
 
 ## Installation
 
-Add `addtohomescreen.css` and `addtohomescreen.js` to the head of your projects index file. Then, call `addToHomescreen();` as soon as possible. For example:
+```javascript
+import addToHomescreen from 'add-to-homescreen';
 
-```html
-<head>
-<title>Add To Home</title>
-...
-<link rel="stylesheet" type="text/css" href="../../style/addtohomescreen.css">
-<script src="../../src/addtohomescreen.js"></script>
-<script>
-addToHomescreen();
-</script>
-</head>
+addToHomescreen({
+  skipFirstVisit: true,
+  maxDisplayCount: 1,
+  iosText: 'Hello ios user',
+  androidText: 'Hey android user',
+  lifespan: 15
+});
 ```
 
-For more, consult the [project website](http://cubiq.org/add-to-home-screen).
+```javascript
+// Default config
+{
+    fontSize: 15, // base font size, used to properly resize the popup based on viewport scale factor
+    modal: false, // prevent further actions until the message is closed
+    mandatory: false, // you can't proceed if you don't add the app to the homescreen
+    autostart: true, // show the message automatically
+    skipFirstVisit: false, // show only to returning visitors (ie: skip the first time you visit)
+    startDelay: 1, // display the message after that many seconds from page load
+    lifespan: 15, // life of the message in seconds
+    displayPace: 1440, // minutes before the message is shown again (0: display every time, default 24 hours)
+    maxDisplayCount: 0, // absolute maximum number of times the message will be shown to the user (0: no limit)
+    icon: true, // add touch icon to the message
+    validLocation: [], // list of pages where the message will be shown (array of regexes)
+    onInit: null, // executed on instance creation
+    onShow: null, // executed when the message is shown
+    onRemove: null, // executed when the message is removed
+    onAdd: null, // when the application is launched the first time from the homescreen (guesstimate)
+    onPrivate: null, // executed if user is in private mode
+    privateModeOverride: false, // show the message even in private mode (very rude)
+    detectHomescreen: false, // try to detect if the site has been added to the homescreen (false | true | 'hash' | 'queryString' | 'smartURL')
+    iosText: '', // text displayed on ios
+    androidText: '' // text displayed on android
+};
+```
 
 ## License
 
