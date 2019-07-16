@@ -60,8 +60,8 @@ ath.defaults = {
 	onPrivate: null,			// executed if user is in private mode
 	privateModeOverride: false,	// show the message even in private mode (very rude)
 	detectHomescreen: false,		// try to detect if the site has been added to the homescreen (false | true | 'hash' | 'queryString' | 'smartURL')
-	iosText: 'pica',
-	androidText: 'devka'
+	iosText: '',
+	androidText: ''
 };
 
 // browser info and capability
@@ -104,15 +104,8 @@ ath.removeSession = function (appID) {
 	}
 };
 
-ath.doLog = function (logStr) {
-	if ( this.options.logging ) {
-		console.log(logStr);
-	}
-};
-
 ath.Class = function (options) {
 	// class methods
-	this.doLog = ath.doLog;
 
 	// merge default options with user config
 	this.options = _extend({}, ath.defaults);
@@ -157,7 +150,6 @@ ath.Class = function (options) {
 
 	// the device is not supported
 	if ( !ath.isCompatible ) {
- 		this.doLog("Device not supported");
 		return;
 	}
 
@@ -191,15 +183,12 @@ ath.Class = function (options) {
 
 	// critical errors:
 	if ( this.session.optedout ) {
-		this.doLog("User opt out");
 		return;
 	}
 	if ( this.session.added ) {
-		this.doLog("Already added");
 		return;
 	}
 	if ( !isValidLocation ) {
-		this.doLog("Invalid location");
 		return;
 	}
 
@@ -214,8 +203,6 @@ ath.Class = function (options) {
 				this.options.onAdd.call(this);
 			}
 		}
-
-		this.doLog("Standalone mode");
 		return;
 	}
 
@@ -234,8 +221,6 @@ ath.Class = function (options) {
 					this.options.onAdd.call(this);
 				}
 			}
-
-			this.doLog("PWA");
 			return;
 		}
 
@@ -256,14 +241,12 @@ ath.Class = function (options) {
 
 		// we do not show the message if this is your first visit
 		if ( this.options.skipFirstVisit ) {
-			this.doLog("First visit");
 			return;
 		}
 	}
 
 	// we do no show the message in private mode
 	if ( !this.options.privateModeOverride && !ath.hasLocalStorage ) {
-		this.doLog("Private mode");
 		return;
 	}
 
@@ -275,7 +258,6 @@ ath.Class = function (options) {
 	}
 
 	if ( this.options.autostart ) {
-		this.doLog("Autostart");
 		this.show();
 	}
 };
@@ -313,7 +295,6 @@ ath.Class.prototype = {
 
 		// message already on screen
 		if ( this.shown ) {
-			this.doLog("Already shown");
 			return;
 		}
 
@@ -323,19 +304,16 @@ ath.Class.prototype = {
 		if ( force !== true ) {
 			// this is needed if autostart is disabled and you programmatically call the show() method
 			if ( !this.ready ) {
-				this.doLog("Not ready");
 				return;
 			}
 
 			// we obey the display pace (prevent the message to popup too often)
 			if ( now - lastDisplayTime < this.options.displayPace * 60000 ) {
-				this.doLog("Displayed recently");
 				return;
 			}
 
 			// obey the maximum number of display count
 			if ( this.options.maxDisplayCount && this.session.displayCount >= this.options.maxDisplayCount ) {
-				this.doLog("Display limit reached");
 				return;
 			}
 		}
@@ -410,7 +388,6 @@ ath.Class.prototype = {
 
 		// if we don't have to wait for an image to load, show the message right away
 		if ( this.img ) {
-			this.doLog("Add to homescreen: not displaying callout because waiting for img to load");
 		} else {
 			this._delayedShow();
 		}
