@@ -390,7 +390,7 @@ ath.Class.prototype = {
 
 
     message = '<p>' + message.replace(/%icon(?:\[([^\]]+)\])?/gi, function (matches, group1) {
-      return '<span class="ath-action-icon">' + (!!group1 ? group1 : 'icon') + '</span>';
+      return '<span class="ath-action-icon"></span>';
     }) + '</p>'; // create the message container
 
     this.viewport = document.createElement('div');

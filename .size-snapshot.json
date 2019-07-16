@@ -1,26 +1,26 @@
 {
   "esm/add-to-homescreen.js": {
-    "bundled": 19730,
-    "minified": 11264,
-    "gzipped": 3206,
+    "bundled": 19694,
+    "minified": 11249,
+    "gzipped": 3199,
     "treeshaked": {
       "rollup": {
-        "code": 10828,
+        "code": 10813,
         "import_statements": 0
       },
       "webpack": {
-        "code": 11890
+        "code": 11875
       }
     }
   },
   "umd/add-to-homescreen.js": {
-    "bundled": 20431,
-    "minified": 10981,
-    "gzipped": 3196
+    "bundled": 20395,
+    "minified": 10966,
+    "gzipped": 3190
   },
   "umd/add-to-homescreen.min.js": {
-    "bundled": 20431,
-    "minified": 10981,
-    "gzipped": 3196
+    "bundled": 20395,
+    "minified": 10966,
+    "gzipped": 3190
   }
 }
